@@ -64,6 +64,7 @@ for fname in glob.glob('calib_images/left03.jpg'):
         imgpts, jac = cv2.projectPoints(axis, rvecs, tvecs, mtx, dist)
 
         img = draw(img,corners2,imgpts)
+        cv2.namedWindow('img', cv2.WINDOW_NORMAL)
         cv2.imshow('img',img)
         k = cv2.waitKey(0) & 0xff
 
